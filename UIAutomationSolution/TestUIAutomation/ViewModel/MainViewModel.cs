@@ -84,6 +84,26 @@ namespace TestUIAutomation.ViewModel
             }
         }
 
+        private RelayCommand getControlInfo;
+        public RelayCommand GetControlInfo
+        {
+            get
+            {
+                if(getControlInfo == null)
+                {
+                    getControlInfo = new RelayCommand(() => GetControls(), CanExecute);
+                }
+
+                return getControlInfo;
+            }
+           
+        }
+
+        private void GetControls()
+        {
+            
+        }
+
         private bool CanExecute()
         {
             return true;
@@ -91,7 +111,6 @@ namespace TestUIAutomation.ViewModel
 
         private void RefreshApp()
         {
-            MessageBox.Show("Clicked");
             lst.Clear();
             AutomationHelper automationHelper = AutomationHelper.Instance;
             AutomationElement root = automationHelper.RootElement();

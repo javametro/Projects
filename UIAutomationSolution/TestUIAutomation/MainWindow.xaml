@@ -16,9 +16,11 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <ComboBox ItemsSource="{Binding App.AppNames, Mode=TwoWay}" Grid.Column="0"></ComboBox>
+            <ComboBox x:Name="apps" ItemsSource="{Binding App.AppNames, Mode=TwoWay}" Grid.Column="0"></ComboBox>
             <Button Grid.Column="1" Content="刷新App列表" Command="{Binding RefreshAppCommand}"></Button>
+            <Button Grid.Column="2" Content="获取控件信息" Command="{Binding GetControlInfo}"></Button>
         </Grid>
     </StackPanel>
 </Window>
